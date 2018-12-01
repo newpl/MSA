@@ -1,4 +1,4 @@
-package com.news.restCtrl;
+package com.news.article.restCtrl;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

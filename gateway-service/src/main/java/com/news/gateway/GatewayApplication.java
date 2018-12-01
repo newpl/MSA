@@ -1,14 +1,16 @@
-package com.news;
+package com.news.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
-@SpringBootApplication
 @EnableEurekaClient
-public class NewsApplication {
+@EnableZuulProxy
+@SpringBootApplication
+public class GatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NewsApplication.class, args);
+		SpringApplication.run(GatewayApplication.class, args);
 	}
 }

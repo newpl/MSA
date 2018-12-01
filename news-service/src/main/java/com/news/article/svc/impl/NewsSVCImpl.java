@@ -1,8 +1,8 @@
-package com.news.svc.impl;
+package com.news.article.svc.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.news.svc.NewsSVC;
+import com.news.article.svc.NewsSVC;
 
 @Service
 public class NewsSVCImpl implements NewsSVC{

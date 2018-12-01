@@ -1,4 +1,4 @@
-package com.news.svc;
+package com.news.article.svc;
 
 public interface NewsSVC {
 

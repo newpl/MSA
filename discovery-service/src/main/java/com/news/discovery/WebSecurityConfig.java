@@ -1,3 +1,4 @@
+package com.news.discovery;
 //package com.news;
 //
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;
