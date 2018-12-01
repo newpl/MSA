@@ -8,9 +8,9 @@ spring:
 spring:
   profiles: local
   application:
-    name: gateway
+    name: news
 server:
-  port: 8080
+  port: 8090
 eureka:
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -20,17 +20,14 @@ eureka:
   client:
     healthcheck:
       enabled: true
-zuul:
-  prefix: /api 
-      
 # 개발 환경
 ---
 spring:
   profiles: dev
   application:
-    name: gateway
+    name: news
 server:
-  port: 8080
+  port: 8090
 eureka:
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -46,9 +43,9 @@ eureka:
 spring:
   profiles: ops
   application:
-    name: gateway
+    name: news
 server:
-  port: 8080 
+  port: 8090 
 eureka:
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
