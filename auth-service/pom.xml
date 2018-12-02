@@ -5,10 +5,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>auth-service</artifactId>
+	<artifactId>auth</artifactId>
 	<packaging>jar</packaging>
 
-	<name>auth-service</name>
+	<name>auth</name>
 	<description>auth service</description>
 
 	<parent>
