@@ -1,4 +1,4 @@
-package com.news;
+package com.news.auth;
 
 import static org.junit.Assert.assertTrue;
 
