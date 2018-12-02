@@ -8,7 +8,7 @@
 	<artifactId>auth-service</artifactId>
 	<packaging>jar</packaging>
 
-	<name>auth-service</name>
+	<name>auth</name>
 	<description>auth service</description>
 
 	<parent>
