@@ -10,7 +10,7 @@ spring:
   application:
     name: auth-service
 server:
-  port: 5533
+  port: 6000
 eureka:
   instance:
     preferIpAddress: true 

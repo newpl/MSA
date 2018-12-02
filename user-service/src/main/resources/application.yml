@@ -10,7 +10,7 @@ spring:
   application:
     name: user-service
 server:
-  port: 6767
+  port: 6010
 eureka:
   instance:
     preferIpAddress: true 
