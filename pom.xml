@@ -12,7 +12,8 @@
 		<module>gateway-service</module>
 	    <module>auth-service</module>
 	    <module>user-service</module>
-  </modules>
+		<module>article-service</module>
+	</modules>
 
 	<packaging>pom</packaging>
 

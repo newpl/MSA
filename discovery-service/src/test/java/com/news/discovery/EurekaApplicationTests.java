@@ -1,4 +1,4 @@
-package com.news;
+package com.news.discovery;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
