@@ -8,7 +8,7 @@ spring:
 spring:
   profiles: local
   application:
-    name: news
+    name: article
 server:
   port: 8090
 eureka:
@@ -25,7 +25,7 @@ eureka:
 spring:
   profiles: dev
   application:
-    name: news
+    name: article
 server:
   port: 8090
 eureka:
@@ -43,7 +43,7 @@ eureka:
 spring:
   profiles: ops
   application:
-    name: news
+    name: article
 server:
   port: 8090 
 eureka:

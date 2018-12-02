@@ -4,11 +4,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>news-service</artifactId>
+	<artifactId>article-service</artifactId>
 	<packaging>jar</packaging>
 
-	<name>news-service</name>
-	<description>news-service</description>
+	<name>article-service</name>
+	<description>article-service</description>
 
 	<parent>
 		<groupId>com.news</groupId>
@@ -38,6 +38,21 @@
 		</dependency>
 		<!-- <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-starter-config</artifactId> 
 			</dependency> -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
