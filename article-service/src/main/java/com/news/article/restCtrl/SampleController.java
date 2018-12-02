@@ -13,11 +13,11 @@ import com.news.restapi.ArticleServiceAPI;
 @RequestMapping("/test")
 public class SampleController {
 	
-	@Autowired
-	ArticleServiceAPI articleServiceAPI;
+//	@Autowired
+//	ArticleServiceAPI articleServiceAPI;
 	@GetMapping("/test1")
 	public ResponseEntity test(){
-		articleServiceAPI.test();
+//		articleServiceAPI.test();
 		
 		return new ResponseEntity<>("정상", HttpStatus.ACCEPTED);
 		
