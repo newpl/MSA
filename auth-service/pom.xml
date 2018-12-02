@@ -8,14 +8,14 @@
 	<artifactId>auth-service</artifactId>
 	<packaging>jar</packaging>
 
-	<name>auth</name>
+	<name>auth-service</name>
 	<description>auth service</description>
 
 	<parent>
 		<groupId>com.news</groupId>
 		<artifactId>news</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath />
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 
