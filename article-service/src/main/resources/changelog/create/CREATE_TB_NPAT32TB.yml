@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: CREATE_TB_NPAT32TB
+      author: newpl
+      changes:
+        - createTable:
+            tableName: NPAT32TB
+            columns:
+              - column:
+                  name: CATEGORY_NO
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: CATEGORY_NM
+                  type: varchar(100)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: CATEGORY_STATUS
+                  type: int
+              - column:
+                  name: CREATED_DATETIME
+                  type: timestamp
+              - column:
+                  name: UPDATED_DATETIME
+                  type: timestamp
+              - column:
+                  name: CREATED_USER_ID
+                  type: int
+              - column:
+                  name: UPDATED_USER_ID
+                  type: int
