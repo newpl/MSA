@@ -1,0 +1,40 @@
+# 기본 환경 선택
+spring:
+  profiles:
+    active: local 
+
+# local 환경
+---
+spring:
+  profiles: local
+  application:
+    name: gateway-service
+server:
+  port: 8080
+eureka:
+  instance:
+    preferIpAddress: true 
+
+# 개발 환경
+---
+spring:
+  profiles: dev
+  application:
+    name: gateway-service
+server:
+  port: 8080
+eureka:
+  instance:
+    preferIpAddress: true 
+
+# 운영 환경
+---
+spring:
+  profiles: ops
+  application:
+    name: gateway-service
+server:
+  port: 8080 
+eureka:
+  instance:
+    preferIpAddress: true 
