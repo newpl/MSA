@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: CREATE_TB_NPAT11TB
+      author: newpl
+      changes:
+        - createTable:
+            tableName: NPAT11TB
+            columns:
+              - column:
+                  name: ARTICLE_NO
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: USER_NO
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: SCORE
+                  type: int
+              - column:
+                  name: DELETE_YN
+                  type: varchar(1)
+              - column:
+                  name: CREATED_DATETIME
+                  type: timestamp
+              - column:
+                  name: UPDATED_DATETIME
+                  type: timestamp
+              - column:
+                  name: CREATED_USER_ID
+                  type: int
+              - column:
+                  name: UPDATED_USER_ID
+                  type: int
