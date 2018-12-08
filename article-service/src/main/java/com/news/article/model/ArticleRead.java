@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-
+  
 @Data
 @Entity
 @Table(name = "npat12tb")
