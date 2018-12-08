@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 import lombok.Data;
-
+ 
 @Embeddable
 @Data
 public class CategoryPK implements Serializable {

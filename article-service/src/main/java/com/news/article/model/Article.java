@@ -10,14 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-  
+   
 @Data
 @Entity
 @Table(name = "npat01tb")
 public class Article extends BaseEntity implements Serializable {
 
 	@Id	
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ARTICLE_NO")
 	private int aricleNo;
 	

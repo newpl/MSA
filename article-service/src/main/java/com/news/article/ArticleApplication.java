@@ -10,7 +10,7 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
 @SpringBootApplication
 @EnableEurekaClient
 @EnableEncryptableProperties
-@EnableJpaAuditing
+@EnableJpaAuditing 
 public class ArticleApplication {
 
 	public static void main(String[] args) {
