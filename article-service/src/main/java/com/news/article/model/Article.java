@@ -16,21 +16,27 @@ import lombok.Data;
 @Table(name = "npat01tb")
 public class Article extends BaseEntity implements Serializable {
 
-	@Id
+	@Id	
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ARTICLE_NO")
 	private int aricleNo;
 	
+	@Column(name = "USER_NO")
 	private int userNo;
 	
+	@Column(name = "ARTICLE_STATUS")
 	private int articleStatus;
 	
-	@Column(length = 120)
+	@Column(name = "TITLE", length = 120)
 	private String title;
 	
+	@Column(name = "CONTENTS")
 	private String contents;
 	
+	@Column(name = "CATEGORY_NO")
 	private int categoryNo;	
 	
+	@Column(name = "DELETE_YN")
 	private char deleteYn;
 
 }
