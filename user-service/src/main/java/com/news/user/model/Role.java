@@ -1,24 +1,24 @@
 package com.news.user.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+import lombok.Data;
+
+@Data
 @Entity
-public class Role {
+@Table(name = "npus11tb")
+public class Role extends BaseEntity{
+
 	@Id
-	@GeneratedValue
-	private Long id;
-	private String name;
-	public Role() {}
-	public Role(String name) {
-		this.name = name;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ROLE_NO")
+	private Long roleNo;
+	@Column(name = "ROLE_NM", length = 120)
+	private String roleNm;
+
 }
