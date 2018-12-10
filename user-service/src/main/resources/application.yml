@@ -47,10 +47,6 @@ spring:
      #jdbc-url: jdbc:mariadb://52.79.160.37:3306/user?autoreconnect=true
      #username: newpl
      #password: sbvmf!1
-  liquibase:
-    change-log: classpath:liquibase.xml
-    enabled: true
-    drop-first: false
   jpa:
     show-sql: true
     hibernate:
