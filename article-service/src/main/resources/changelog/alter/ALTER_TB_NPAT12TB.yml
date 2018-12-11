@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: ALTER_NPAT12TB_1
+      author: newpl
+      changes:
+        - modifyDataType:
+            tableName: NPAT12TB
+            columnName: ARTICLE_NO
+            newDataType: bigint
+        - modifyDataType:
+            tableName: NPAT12TB
+            columnName: USER_NO
+            newDataType: bigint
+        - modifyDataType:
+            tableName: NPAT12TB
+            columnName: CREATED_USER_ID
+            newDataType: varchar(120)
+        - modifyDataType:
+            tableName: NPAT12TB
+            columnName: UPDATED_USER_ID
+            newDataType: varchar(120)
+            
+  - changeSet:
+      id: ALTER_NPAT12TB_2
+      author: newpl
+      changes:
+        - renameColumn:
+            tableName: NPAT12TB
+            columnDataType: varchar(120)
+            oldColumnName: CREATED_USER_ID
+            newColumnName: CREATED_SOURCE_ID
+        - renameColumn:
+            tableName: NPAT12TB
+            columnDataType: varchar(120)
+            oldColumnName: UPDATED_USER_ID
+            newColumnName: UPDATED_SOURCE_ID
