@@ -15,6 +15,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -30,13 +31,17 @@ public class User {
 	private Long userNo;
 	
 	@NotNull
-	@Column(name = "USER_ID", length = 50)
+	@Size(max=50)
+	@Column(name = "USER_ID")
 	private String userId;
+
 	@NotNull
-	@Column(name = "PASSWORD", length = 50)
+	@Size(max=50)
+	@Column(name = "PASSWORD")
 	private String password;
 
-	@Column(name = "NICK_NM", length = 50)
+	@Size(max=50)
+	@Column(name = "NICK_NM")
 	private String nickNm;
 
 	@OneToMany(fetch = FetchType.EAGER)

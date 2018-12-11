@@ -1,6 +1,5 @@
 package com.news.user;
 
-import java.util.Arrays;
 import java.util.Optional;
 
 import org.junit.Test;
@@ -9,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.news.user.model.Writer;
-import com.news.user.model.Role;
 import com.news.user.model.User;
 import com.news.user.repo.UserRepository;
 
@@ -24,12 +21,12 @@ public class UserApplicationTest {
 
 	@Test
 	public void createUserTest() {
-		repo.save(new User("user1","user1",Arrays.asList(new Role("USER"))));
+//		repo.save(new User("user1","user1",Arrays.asList(new Role("USER"))));
 	}
 
 	@Test
 	public void createReporterTest() {
-		repo.save(new Writer("hey","hey",Arrays.asList(new Role("USER")),"타입"));
+//		repo.save(new Writer("hey","hey",Arrays.asList(new Role("USER")),"타입"));
 	}
 
 	

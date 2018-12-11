@@ -22,16 +22,24 @@ spring:
     name: user-service
   datasource:
     hikari:
-      driver-class-name: org.mariadb.jdbc.Driver
-      jdbc-url: jdbc:mariadb://localhost:3306/jpa_test?autoreconnect=true
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
       username: root
       password: 1234
+#      driver-class-name: org.mariadb.jdbc.Driver
+#      jdbc-url: jdbc:mariadb://localhost:3306/jpa_test?autoreconnect=true
+#      username: root
+#      password: 1234
   liquibase:
     change-log: classpath:liquibase.xml
     enabled: true
     drop-first: false
   jpa:
     show-sql: true
+    database: H2
+  h2:
+    console:
+      enabled: true
 # 개발 환경
 ---
 spring:
@@ -47,11 +55,13 @@ spring:
      #jdbc-url: jdbc:mariadb://52.79.160.37:3306/user?autoreconnect=true
      #username: newpl
      #password: sbvmf!1
+  liquibase:
+    change-log: classpath:liquibase.xml
+    enabled: true
+    drop-first: false
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: update
-
+    
 # 운영 환경
 ---
 spring:

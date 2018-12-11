@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -18,7 +19,9 @@ public class Role extends BaseEntity{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ROLE_NO")
 	private Long roleNo;
-	@Column(name = "ROLE_NM", length = 120)
+
+	@Size(max=120)
+	@Column(name = "ROLE_NM")
 	private String roleNm;
 
 }
