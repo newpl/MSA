@@ -2,7 +2,6 @@ package com.news.user.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -17,10 +16,20 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import lombok.Data;
+import com.news.user.model.Role.RoleBuilder;
 
-@Data
-@Entity
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
+@EqualsAndHashCode(of="userNo")
+@Builder @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn
 @Table(name = "npus01tb")
