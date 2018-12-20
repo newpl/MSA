@@ -11,25 +11,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.news.user.model.Role.RoleBuilder;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @EqualsAndHashCode(of="userNo")
 @Builder @Entity
+@ToString
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn
 @Table(name = "npus01tb")
@@ -54,6 +55,9 @@ public class User {
 	private String nickNm;
 
 	@OneToMany(fetch = FetchType.EAGER)
+	@JoinTable(name ="npus21tb",
+			joinColumns = @JoinColumn(name = "USER_NO"),
+			inverseJoinColumns = @JoinColumn(name= "ROLE_NO"))
 	private List<Role> roles;
 	
 }

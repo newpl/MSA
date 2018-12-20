@@ -49,7 +49,7 @@ public class UserControllerTest {
 		
 		//When
 		User user = User.builder()
-				.userNo(id)
+				//.userNo(id)
 				.userId("test1")
 				.password("test1")
 				.nickNm("테스트")

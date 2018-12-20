@@ -51,7 +51,8 @@ spring:
       driver-class-name: org.mariadb.jdbc.Driver
       jdbc-url: ENC(b6beW7suM3f08wubQxJtVfaBhQSzpFRaeO1WInYPafXBf2OsFiU9liUouFUAM+e68Fe6FuGnoAUox/yhC/z8Kp2psdpLLzRU) 
       username: ENC(1EjoisU5l8lIO4hTV9q2sw==)
-      password: ENC(GGi4QiVCJBVsKachxgnUYw==)
+      password: ENC(+QPgNB/SXzYgRrda+210Og==)
+      #password: ENC(GGi4QiVCJBVsKachxgnUYw==)
      #jdbc-url: jdbc:mariadb://52.79.160.37:3306/user?autoreconnect=true
      #username: newpl
      #password: sbvmf!1
@@ -61,6 +62,9 @@ spring:
     drop-first: false
   jpa:
     show-sql: true
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
     
 # 운영 환경
 ---
