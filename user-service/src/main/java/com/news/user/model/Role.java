@@ -8,9 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
+@EqualsAndHashCode(of="roleNo")
+@Builder
 @Entity
 @Table(name = "npus11tb")
 public class Role extends BaseEntity{

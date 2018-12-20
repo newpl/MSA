@@ -3,6 +3,7 @@ package com.news.user.svc;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.news.user.model.User;
@@ -14,14 +15,14 @@ public class UserService {
 	UserRepository userRepository;
 
 //	@Autowired
-//	PasswordEncoder passwordEncoder;
+//	BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	public List<User> findAll() {		
 		return userRepository.findAll();
 	}
 
 	public User save(User user) {
-//		user.setPassword(passwordEncoder.encode(user.getPassword()));
+//		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		return userRepository.save(user);
 	}
 
