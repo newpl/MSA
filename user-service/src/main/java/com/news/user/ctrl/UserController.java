@@ -26,7 +26,10 @@ public class UserController {
 	}
 	@PostMapping
 	public ResponseEntity<?> createUser(@RequestBody User user) {
+		
+		System.out.println("안녕 난 유저컨트롤러야 : " + user);
 		User res = userService.save(user);
+		System.out.println("서비스 잘갔다옴");
 		return ResponseEntity.ok(res); 
 	}
 }
