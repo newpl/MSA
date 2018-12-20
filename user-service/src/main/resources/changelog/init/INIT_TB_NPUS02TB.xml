@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<property name="now" value="now()" dbms="mariadb" />
+	<property name="now" value="now()" dbms="h2" />
+
+	<!-- User 테이블 Init Insert-->
+    <changeSet id="INIT_TB_NPUS02TB" author="newpl">
+        <insert tableName="NPUS01TB">
+           	<column name="USER_NO" value="2" />
+            <column name="USER_ID" value="writer_test"/>
+            <column name="PASSWORD" value="test"/>
+            <column name="NICK_NM" value="테스트용기자"/>
+            <column name="DTYPE" value="WRITER"/>
+            <column name="DELETE_YN" value="N"/>
+            <column name="CREATED_DATETIME" value="${now}"/>
+            <column name="UPDATED_DATETIME" value="${now}"/>
+            <column name="CREATED_SOURCE_ID" value="newpl"/>
+            <column name="UPDATED_SOURCE_ID" value="newpl"/>
+        </insert>
+        <insert tableName="NPUS02TB">
+           	<column name="USER_NO" value="2" />
+            <column name="FULL_NM" value="난기자"/>
+<!-- <column name="USER_TYPE" value="test"/>  -->            
+            <column name="FNL_ANONYM_TYPE" value="AN"/>
+            <column name="PHOTO_PATH" value=""/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

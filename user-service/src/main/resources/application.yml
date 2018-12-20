@@ -2,6 +2,17 @@
 spring:
   profiles:
     active: local 
+  liquibase:
+    enabled: false
+    drop-first: false
+server:
+    port: 6010
+eureka:
+  instance:
+    preferIpAddress: true 
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
 
 # local 환경
 ---
@@ -9,32 +20,51 @@ spring:
   profiles: local
   application:
     name: user-service
-server:
-  port: 6010
-eureka:
-  instance:
-    preferIpAddress: true 
-
+  datasource:
+    hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+      username: root
+      password: 1234
+#      driver-class-name: org.mariadb.jdbc.Driver
+#      jdbc-url: jdbc:mariadb://localhost:3306/jpa_test?autoreconnect=true
+#      username: root
+#      password: 1234
+  liquibase:
+    change-log: classpath:liquibase.xml
+    enabled: true
+    drop-first: false
+  jpa:
+    show-sql: true
+    database: H2
+  h2:
+    console:
+      enabled: true
 # 개발 환경
 ---
 spring:
   profiles: dev
   application:
     name: user-service
-server:
-  port: 6010
-eureka:
-  instance:
-    preferIpAddress: true 
-
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: ENC(b6beW7suM3f08wubQxJtVfaBhQSzpFRaeO1WInYPafXBf2OsFiU9liUouFUAM+e68Fe6FuGnoAUox/yhC/z8Kp2psdpLLzRU) 
+      username: ENC(1EjoisU5l8lIO4hTV9q2sw==)
+      password: ENC(GGi4QiVCJBVsKachxgnUYw==)
+     #jdbc-url: jdbc:mariadb://52.79.160.37:3306/user?autoreconnect=true
+     #username: newpl
+     #password: sbvmf!1
+  liquibase:
+    change-log: classpath:liquibase.xml
+    enabled: true
+    drop-first: false
+  jpa:
+    show-sql: true
+    
 # 운영 환경
 ---
 spring:
   profiles: ops
   application:
     name: user-service
-server:
-  port: 6010 
-eureka:
-  instance:
-    preferIpAddress: true 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<property name="now" value="now()" dbms="mariadb" />
+	<property name="now" value="now()" dbms="h2" />
+
+	<!-- Writer 테이블 스키마 정의 -->
+    <changeSet id="CREATE_TB_NPUS02TB" author="newpl">
+        <createTable tableName="NPUS02TB">
+            <column name="USER_NO" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="FULL_NM" type="varchar(50)"/>
+<!-- <column name="USER_TYPE" type="varchar(2)"/> -->            
+            <column name="FNL_ANONYM_TYPE" type="varchar(2)"/>
+            <column name="PHOTO_PATH" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
