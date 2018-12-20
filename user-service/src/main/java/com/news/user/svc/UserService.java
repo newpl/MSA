@@ -3,14 +3,13 @@ package com.news.user.svc;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.news.user.model.User;
 import com.news.user.repo.UserRepository;
 
 @Service
-public class UserService {
+public class UserService { 
 	@Autowired
 	UserRepository userRepository;
 
