@@ -1,5 +1,7 @@
 package com.news.user.exception;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,8 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.news.user.svc.impl.UserServiceImpl;
+
 @ControllerAdvice
 public class ApiAdvice extends ResponseEntityExceptionHandler{
+	
+	static private final Logger LOGGER = LoggerFactory.getLogger(ApiAdvice.class);
 	
 	@ExceptionHandler(value= {ApiException.class})
 	@ResponseBody
@@ -36,6 +42,8 @@ public class ApiAdvice extends ResponseEntityExceptionHandler{
 		}
 		
 		apiErrorMessage.setMessage(message);
+		LOGGER.error(message);
+		
 		return handleExceptionInternal(restCtrlException, apiErrorMessage, new HttpHeaders(), restCtrlException.getStatus(), request);
 	}
 	

@@ -40,6 +40,14 @@ spring:
   h2:
     console:
       enabled: true
+      
+logging:
+  level:
+    root: INFO
+    com.news: DEBUG
+  file: C:/Users/ye/logs/user-all.log
+      
+      
 # 개발 환경
 ---
 spring:
@@ -66,6 +74,12 @@ jasypt:
   encryptor:
     bean: jasyptStringEncryptor
     
+logging:
+  level:
+    root: INFO
+    com.news: DEBUG
+  file: /logs/user-all.log  
+      
 # 운영 환경
 ---
 spring:

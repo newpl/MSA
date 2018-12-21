@@ -2,6 +2,8 @@ package com.news.user.ctrl;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,8 @@ import com.news.user.svc.UserService;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+	
+	static private final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 	@Autowired
 	UserService userService;
 	
@@ -27,9 +31,8 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<?> createUser(@RequestBody User user) {
 		
-		System.out.println("안녕 난 유저컨트롤러야 : " + user);
+		LOGGER.debug("UserController : " + user);
 		User res = userService.save(user);
-		System.out.println("서비스 잘갔다옴");
 		return ResponseEntity.ok(res); 
 	}
 }
