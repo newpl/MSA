@@ -57,12 +57,13 @@ public class HttpRequestWrapper extends HttpServletRequestWrapper {
 	public HttpRequestWrapper(HttpServletRequest request) {
 		super(request);
 		String contentType = request.getContentType();
-
-		if (contentType == null) {
-			return;
-		}
-		if (contentType.equals(MediaType.APPLICATION_JSON_VALUE)) {
-			bodyData = cleanXSS(getBody(request)).getBytes();
+		bodyData = getBody(request).getBytes();
+		if (contentType != null) {
+			if (contentType.contains(MediaType.APPLICATION_JSON_VALUE)) {
+//				System.out.println("Bf : " + new String(bodyData));
+				bodyData = cleanXSS(new String(bodyData)).getBytes();
+//				System.out.println("Af : " + new String(bodyData));
+			}
 		}
 	}
 

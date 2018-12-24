@@ -26,7 +26,7 @@ public class PreFilter extends ZuulFilter {
 	@Override
 	public int filterOrder() {
 		// TODO Auto-generated method stub
-		return 1;
+		return 0;
 	}
 
 	@Override
