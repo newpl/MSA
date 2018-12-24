@@ -8,33 +8,53 @@ spring:
 spring:
   profiles: local
   application:
-    name: gateway-service
+    name: gateway
 server:
   port: 8080
 eureka:
   instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
     preferIpAddress: true 
-
+  client:
+    healthcheck:
+      enabled: true
+zuul:
+  prefix: /api 
+      
 # 개발 환경
 ---
 spring:
   profiles: dev
   application:
-    name: gateway-service
+    name: gateway
 server:
   port: 8080
 eureka:
   instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
     preferIpAddress: true 
+  client:
+    healthcheck:
+      enabled: true
 
 # 운영 환경
 ---
 spring:
   profiles: ops
   application:
-    name: gateway-service
+    name: gateway
 server:
   port: 8080 
 eureka:
   instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
     preferIpAddress: true 
+  client:
+    healthcheck:
+      enabled: true
