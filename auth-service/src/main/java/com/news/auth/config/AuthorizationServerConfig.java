@@ -11,6 +11,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
+import com.news.auth.UserService;
+
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
@@ -24,26 +26,27 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	@Autowired
+	UserService userService;
+	
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		super.configure(security);
-//		security.checkTokenAccess("isAuthenticated()");
+		security.passwordEncoder(passwordEncoder);
 	}
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//		super.configure(clients);
 		clients.inMemory()
-			.withClient("trusted-client")
-			.secret(passwordEncoder.encode("secret"))
-			.authorizedGrantTypes("authorization_code","password","refresh_token", "implicit")
-			.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT")
-			.scopes("read","write","trust")
-			.accessTokenValiditySeconds(1*60*60)
-			.refreshTokenValiditySeconds(6*60*60);
+		.withClient("client")
+		.authorizedGrantTypes("password", "refresh_token")
+		.scopes("read", "write")
+		.secret(passwordEncoder.encode("secret"))
+		.accessTokenValiditySeconds(10*60)
+		.refreshTokenValiditySeconds(6 * 10 * 60);
 	}
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-//		super.configure(endpoints);
-		endpoints.tokenStore(tokenStore).authenticationManager(authenticationManager);
+		endpoints.authenticationManager(authenticationManager)
+		.userDetailsService(userService)
+		.tokenStore(tokenStore);
 	}
 }
