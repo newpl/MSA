@@ -1,12 +1,12 @@
 package com.news.auth.config;
 
-
 import java.util.Arrays;
 
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -37,6 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public TokenStore tokenStore() {
 		return new InMemoryTokenStore();
 	}
+
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -56,7 +57,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     		.csrf().disable()
     		.anonymous().disable()
     		.authorizeRequests()
+			.mvcMatchers(HttpMethod.GET, "/api/**").authenticated()
+			.anyRequest().authenticated()
     		.antMatchers("/api-docs/**").permitAll();
+    	http.headers().frameOptions().disable();
     }
     
     @Bean
