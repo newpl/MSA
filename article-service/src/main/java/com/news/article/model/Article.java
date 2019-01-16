@@ -19,7 +19,7 @@ public class Article extends BaseEntity implements Serializable {
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ARTICLE_NO")
-	private int aricleNo;
+	private int articleNo;
 	
 	@Column(name = "USER_NO")
 	private int userNo;

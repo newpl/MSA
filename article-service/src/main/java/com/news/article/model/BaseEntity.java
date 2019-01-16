@@ -29,10 +29,10 @@ public class BaseEntity {
 	@LastModifiedDate
 	private Date updatedDatetime;
 
-	@Column(name = "CREATED_USER_ID")
+	@Column(name = "CREATED_SOURCE_ID")
 	private int createdUserId;
 
-	@Column(name = "UPDATED_USER_ID")
+	@Column(name = "UPDATED_SOURCE_ID")
 	private int updatedUserId;
 	
 }
