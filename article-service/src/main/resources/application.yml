@@ -17,21 +17,22 @@ eureka:
     preferIpAddress: true 
   client:
     healthcheck:
-      enabled: true  
+      enabled: true
 # local 환경
 ---
 spring:
   profiles: local
   datasource:
     hikari:
-      jdbc-url: ENC(Vr/tYcsRxJQu1em7ycTueNFGnLf4t8ofCN/x1DQdcwZESGnnnyrkmRRc8t2xrOmY5Y8Pd6U/aL4=)
-      username: ENC(BT+OTrqVHiBV0EtSDJNRqg==)
-      password: ENC(+QPgNB/SXzYgRrda+210Og==)
-      driver-class-name: ENC(ux+FrU/tiiVaOxF/vd+f1wcr3OWr4vx1NEpPsbhy0+s=)
+#      jdbc-url: ENC(Vr/tYcsRxJQu1em7ycTueNFGnLf4t8ofCN/x1DQdcwZESGnnnyrkmRRc8t2xrOmY5Y8Pd6U/aL4=)
+#      username: ENC(BT+OTrqVHiBV0EtSDJNRqg==)
+#      password: ENC(+QPgNB/SXzYgRrda+210Og==)
+#      driver-class-name: ENC(ux+FrU/tiiVaOxF/vd+f1wcr3OWr4vx1NEpPsbhy0+s=)
 #      jdbc-url: jdbc:mariadb://52.79.160.37:3306/article
-#      username: newpl
-#      password: 'sbvmf!1'
-#      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://127.0.0.1:3306/article
+      username: newpl
+      password: 'sbvmf!1'
+      driver-class-name: org.mariadb.jdbc.Driver
       connection-test-query: SELECT 1
   liquibase:
     change-log: classpath:liquibase.xml

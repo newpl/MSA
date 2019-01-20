@@ -7,6 +7,7 @@
 
 	<!-- create -->
 	<include file="changelog/create/CREATE_TB_NPAT01TB.yml"/>
+	<include file="changelog/create/CREATE_TB_NPAT02TB.yml"/>
 	<include file="changelog/create/CREATE_TB_NPAT11TB.yml"/>
 	<include file="changelog/create/CREATE_TB_NPAT12TB.yml"/>
 	<include file="changelog/create/CREATE_TB_NPAT31TB.yml"/>
@@ -14,6 +15,7 @@
 
 	<!-- alter -->
 	<include file="changelog/alter/ALTER_TB_NPAT01TB.yml"/>
+	<include file="changelog/alter/ALTER_TB_NPAT02TB.yml"/>
 	<include file="changelog/alter/ALTER_TB_NPAT11TB.yml"/>
 	<include file="changelog/alter/ALTER_TB_NPAT12TB.yml"/>
 	<include file="changelog/alter/ALTER_TB_NPAT31TB.yml"/>
