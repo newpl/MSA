@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.news.article.model.Customer;
 
-
 public interface CustomerRepository extends JpaRepository<Customer, Long>{
 	List<Customer> findByLastName(String lastName);
 	List<Customer> findByIdBetween(Long id1, Long id2);
-	
+
 }
+

@@ -2,56 +2,47 @@
 spring:
   profiles:
     active: local 
-
+  application:
+    name: article
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+server:
+  port: 6020    
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
+    preferIpAddress: true 
+  client:
+    healthcheck:
+      enabled: true  
 # local 환경
 ---
 spring:
   profiles: local
-  application:
-    name: article
-server:
-  port: 8090
-eureka:
-  instance:
-    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    leaseRenewalIntervalInSeconds: 30
-    leaseExpirationDurationInSeconds: 90
-    preferIpAddress: true 
-  client:
-    healthcheck:
-      enabled: true
+  datasource:
+    hikari:
+      jdbc-url: ENC(Vr/tYcsRxJQu1em7ycTueNFGnLf4t8ofCN/x1DQdcwZESGnnnyrkmRRc8t2xrOmY5Y8Pd6U/aL4=)
+      username: ENC(BT+OTrqVHiBV0EtSDJNRqg==)
+      password: ENC(+QPgNB/SXzYgRrda+210Og==)
+      driver-class-name: ENC(ux+FrU/tiiVaOxF/vd+f1wcr3OWr4vx1NEpPsbhy0+s=)
+#      jdbc-url: jdbc:mariadb://52.79.160.37:3306/article
+#      username: newpl
+#      password: 'sbvmf!1'
+#      driver-class-name: org.mariadb.jdbc.Driver
+      connection-test-query: SELECT 1
+  liquibase:
+    change-log: classpath:liquibase.xml
+    enabled: true
+    drop-first: false
 # 개발 환경
 ---
 spring:
   profiles: dev
-  application:
-    name: article
-server:
-  port: 8090
-eureka:
-  instance:
-    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    leaseRenewalIntervalInSeconds: 30
-    leaseExpirationDurationInSeconds: 90
-    preferIpAddress: true 
-  client:
-    healthcheck:
-      enabled: true
 
 # 운영 환경
 ---
 spring:
   profiles: ops
-  application:
-    name: article
-server:
-  port: 8090 
-eureka:
-  instance:
-    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    leaseRenewalIntervalInSeconds: 30
-    leaseExpirationDurationInSeconds: 90
-    preferIpAddress: true 
-  client:
-    healthcheck:
-      enabled: true

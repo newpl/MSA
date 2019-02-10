@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: CREATE_TB_NPAT31TB
+      author: newpl
+      changes:
+        - createTable:
+            tableName: NPAT31TB
+            columns:
+              - column:
+                  name: ARTICLE_NO
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: SNO
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: HASH_TAG_NM
+                  type: varchar(4000)
+              - column:
+                  name: CREATED_DATETIME
+                  type: timestamp
+              - column:
+                  name: UPDATED_DATETIME
+                  type: timestamp
+              - column:
+                  name: CREATED_USER_ID
+                  type: int
+              - column:
+                  name: UPDATED_USER_ID
+                  type: int
